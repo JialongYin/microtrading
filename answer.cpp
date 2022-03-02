@@ -36,7 +36,7 @@ class Diff {
                 return compare(stoi(a), stoi(b));
                 break;
             case Float:
-                return compare(stof(a), stof(b);
+                return compare(stof(a), stof(b));
                 break;
             case Double:
                 return compare(stod(a), stod(b));
