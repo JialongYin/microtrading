@@ -5,16 +5,16 @@ File::File(std::string filename): filept_(filename), compare_(Diff()) {
     getline(filept_, type_);
     int pos = type_.find('_');
     compare_ = Diff(type_.substr(0, pos));
-    std::cout << type_ << std::endl;
+    std::cout << "File(): " << type_ << typeid(type_).name() << typeid(type_) == typeid(std::string) << std::endl;
 }
 
 void File::diff(File &file, const std::string &fileOutput) {
     this->setTobegin();
     std::string temp;
     std::getline(filept_, temp);
-    std::cout << "temp: " << temp << std::endl;
+    std::cout << "temp: " << temp << typeid(temp).name() << std::endl;
 
-    
+
     std::ofstream out(fileOutput);
     std::string line_, line;
     // char line_[256], line[256];
