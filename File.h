@@ -1,14 +1,15 @@
 #include <fstream>
 #include <string>
+#include "Diff.h"
 
 class File {
   public:
-    File(string filename);
-    void diff(File &file, const string &fileOutput);
+    File(std::string filename);
+    void diff(File &file, const std::string &fileOutput);
 
   private:
     void setTobegin();
-    fstream filept_;
-    string type_;
+    std::fstream filept_;
+    std::string type_;
     Diff compare_;
 };
