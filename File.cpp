@@ -10,12 +10,15 @@ File::File(std::string filename): filept_(filename), compare_(Diff()) {
 
 void File::diff(File &file, const std::string &fileOutput) {
     std::ofstream out(fileOutput);
-    std::string line, line_;
+    // std::string line, line_;
+    char line_[256], line[256];
     while (!filept_.eof()) {
-        std::getline(filept_, line_);
-        std::getline(file.filept_, line);
-        // std::cout << line << " " << typeid(line).name() << std::endl;
-        out << compare_(std::to_string(line_), std::to_string(line)) << std::endl;
+        // std::getline(filept_, line_);
+        // std::getline(file.filept_, line);
+        filept_.getline(line_, 256);
+        file.filept_.getline(line, 256);
+        std::cout << line << " " << typeid(line).name() << std::endl;
+        out << compare_(std::string(line_), std::string(line)) << std::endl;
     }
     this->setTobegin();
     file.setTobegin();
