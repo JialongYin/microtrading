@@ -13,7 +13,7 @@ void File::diff(File &file, const std::string &fileOutput) {
     while (!filept_.eof()) {
         std::getline(filept_, line_);
         std::getline(file.filept_, line);
-        out << compare_(line_, line) << endl;
+        out << compare_(line_, line) << std::endl;
     }
     this->setTobegin();
     file.setTobegin();
