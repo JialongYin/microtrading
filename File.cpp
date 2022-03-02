@@ -16,14 +16,14 @@ void File::diff(File &file, const std::string &fileOutput) {
 
 
     std::ofstream out(fileOutput);
-    out << type_ << std::endl;
+    out << "Diff" << std::endl;
     std::string line_, line;
     // char line_[256], line[256];
     while (true) {
         std::getline(filept_, line_);
         std::getline(file.filept_, line);
-        std::cout << "line_: " << line_ << " " << typeid(line_).name() << std::endl;
-        std::cout << "line: " << line << " " << typeid(line).name() << std::endl;
+        // std::cout << "line_: " << line_ << " " << typeid(line_).name() << std::endl;
+        // std::cout << "line: " << line << " " << typeid(line).name() << std::endl;
         // std::cout << "compare_: " << compare_(line_, line) << std::endl;
         // filept_.getline(line_, 256);
         // file.filept_.getline(line, 256);
