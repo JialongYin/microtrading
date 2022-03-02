@@ -6,7 +6,7 @@ Diff::Diff(std::string type): type_(type) {
 
 template <typename T>
 std::string Diff::compare(T a, T b) {
-    return to_string(a - b);
+    return std::to_string(a - b);
 }
 
 std::string Diff::compare(std::string a, std::string b) {
@@ -23,13 +23,13 @@ Diff::type_code Diff::hashit (std::string const & inString) {
 std::string Diff::operator()(std::string a, std::string b) {
     switch (this->hashit(type_)) {
         case Int:
-            return compare(stoi(a), stoi(b));
+            return compare(std::stoi(a), std::stoi(b));
             break;
         case Float:
-            return compare(stof(a), stof(b));
+            return compare(std::stof(a), std::stof(b));
             break;
         case Double:
-            return compare(stod(a), stod(b));
+            return compare(std::stod(a), std::stod(b));
             break;
         case String:
             return compare(a, b);
