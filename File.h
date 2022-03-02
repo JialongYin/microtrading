@@ -1,5 +1,6 @@
 #include <fstream>
 #include <string.h>
+using namespace std;
 
 class File {
   public:
