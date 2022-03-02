@@ -11,6 +11,6 @@ int main(int argc, char** argv) {
   File fileA = File(fileInputA);
   File fileB = File(fileInputB);
   fileA.diff(fileB, fileOutput);
-  fileB.diff(fileA, fileOutput);
+  // fileB.diff(fileA, fileOutput);
   return 0;
 }
