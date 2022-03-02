@@ -1,21 +1,20 @@
 #include <string.h>
-using namespace std;
 
 class Diff {
   public:
     Diff() = default;
-    Diff(string type);
-    string operator()(string a, string b);
+    Diff(std::string type);
+    std::string operator()(std::string a, std::string b);
 
   private:
-    template <typename T> string compare(T a, T b);
-    string compare(string a, string b);
+    template <typename T> std::string compare(T a, T b);
+    std::string compare(std::string a, std::string b);
     enum type_code {
         Int,
         Float,
         Double,
         String
     };
-    type_code hashit (string const & inString);
-    string type_;
+    type_code hashit (std::string const & inString);
+    std::string type_;
 };

@@ -1,26 +1,26 @@
 #include "Diff.h"
 
 
-Diff::Diff(string type): type_(type) {
+Diff::Diff(std::string type): type_(type) {
 }
 
 template <typename T>
-string Diff::compare(T a, T b) {
+std::string Diff::compare(T a, T b) {
     return to_string(a - b);
 }
 
-string Diff::compare(string a, string b) {
+std::string Diff::compare(std::string a, std::string b) {
     return (a == b) ? "T" : "N";
 }
 
-Diff::type_code Diff::hashit (string const & inString) {
+Diff::type_code Diff::hashit (std::string const & inString) {
     if (inString == "Int") return Int;
     if (inString == "Float") return Float;
     if (inString == "Double") return Int;
     if (inString == "Str") return String;
 }
 
-string Diff::operator()(string a, string b) {
+std::string Diff::operator()(std::string a, std::string b) {
     switch (this->hashit(type_)) {
         case Int:
             return compare(stoi(a), stoi(b));
