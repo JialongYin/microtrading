@@ -13,11 +13,16 @@ class Diff {
     string compare(T a, T b) {
         return to_string(a - b);
     }
-
     string compare(string a, string b) {
         return (a == b) ? "T" : "N";
     }
 
+    enum type_code {
+        Int,
+        Float,
+        Double,
+        String
+    };
     type_code hashit (string const & inString) {
         if (inString == "Int") return Int;
         if (inString == "Float") return Float;
@@ -45,12 +50,6 @@ class Diff {
         }
     }
     string type_;
-    enum type_code {
-        Int,
-        Float,
-        Double,
-        String
-    };
 };
 
 
