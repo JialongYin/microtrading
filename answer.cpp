@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <stdio.h>
-#include <string.h>
+#include <cstdio>
+#include <string>
 #include "File.h"
 using namespace std;
 
