@@ -18,7 +18,7 @@ void File::diff(File &file, const std::string &fileOutput) {
     std::ofstream out(fileOutput);
     std::string line_, line;
     // char line_[256], line[256];
-    while (!filept_.eof()) {
+    while (!filept_.eof() && !file.filept_.eof()) {
         std::getline(filept_, line_);
         std::getline(file.filept_, line);
         std::cout << "line_: " << line_ << " " << typeid(line_).name() << std::endl;
