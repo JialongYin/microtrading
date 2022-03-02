@@ -23,7 +23,7 @@ void File::diff(File &file, const std::string &fileOutput) {
         std::getline(file.filept_, line);
         std::cout << "line_: " << line_ << " " << typeid(line_).name() << std::endl;
         std::cout << "line: " << line << " " << typeid(line).name() << std::endl;
-        std::cout << "compare_: " << compare_(line_, line) << std::endl;
+        // std::cout << "compare_: " << compare_(line_, line) << std::endl;
         // filept_.getline(line_, 256);
         // file.filept_.getline(line, 256);
         // std::cout << line << " " << typeid(line).name() << std::endl;
