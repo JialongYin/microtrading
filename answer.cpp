@@ -31,18 +31,15 @@ class Diff {
     }
 
     string operator()(string a, string b) {
-        switch (hashit(type_)) {
+        switch (this->hashit(type_)) {
             case Int:
-                int at = stoi(a), bt = stoi(b);
-                return compare(at, bt);
+                return compare(stoi(a), stoi(b));
                 break;
             case Float:
-                float at = stof(a), bt = stof(b);
-                return compare(at, bt);
+                return compare(stof(a), stof(b);
                 break;
             case Double:
-                double at = stod(a), bt = stod(b);
-                return compare(at, bt);
+                return compare(stod(a), stod(b));
                 break;
             case String:
                 return compare(a, b);
@@ -54,6 +51,7 @@ class Diff {
 
 
 class File {
+  public:
     File(string filename): filept_(filename) {
         getline(filept_, type_);
         int pos = type_.find('_'));
@@ -71,6 +69,7 @@ class File {
         file.setTobegin();
     }
 
+  private:
     void setTobegin() {
         filept_.seekg (0, filept_.beg);
         getline(filept_, type_);
