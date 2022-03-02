@@ -19,7 +19,7 @@ void File::diff(File &file, const std::string &fileOutput) {
     out << type_ << std::endl;
     std::string line_, line;
     // char line_[256], line[256];
-    while (!filept_.eof() && !file.filept_.eof()) {
+    while (true) {
         std::getline(filept_, line_);
         std::getline(file.filept_, line);
         std::cout << "line_: " << line_ << " " << typeid(line_).name() << std::endl;
@@ -28,6 +28,7 @@ void File::diff(File &file, const std::string &fileOutput) {
         // filept_.getline(line_, 256);
         // file.filept_.getline(line, 256);
         // std::cout << line << " " << typeid(line).name() << std::endl;
+        if (filept_.eof() || file.filept_.eof()) break;
         out << compare_(line_, line) << std::endl;
         // out << compare_(std::string(line_), std::string(line)) << std::endl;
 
