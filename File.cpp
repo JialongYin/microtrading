@@ -5,10 +5,14 @@ File::File(std::string filename): filept_(filename), compare_(Diff()) {
     getline(filept_, type_);
     int pos = type_.find('_');
     compare_ = Diff(type_.substr(0, pos));
-    // std::cout << type_ << std::endl;
+    std::cout << type_ << std::endl;
 }
 
 void File::diff(File &file, const std::string &fileOutput) {
+    this->setTobegin();
+    string temp;
+    getline(filept_, temp);
+    std::cout << "temp: " << temp << std::endl;
     std::ofstream out(fileOutput);
     // std::string line_, line;
     char line_[256], line[256];
@@ -17,7 +21,7 @@ void File::diff(File &file, const std::string &fileOutput) {
         // std::getline(file.filept_, line);
         filept_.getline(line_, 256);
         file.filept_.getline(line, 256);
-        std::cout << line << " " << typeid(line).name() << std::endl;
+        // std::cout << line << " " << typeid(line).name() << std::endl;
         // out << compare_(line_, line) << std::endl;
         out << compare_(std::string(line_), std::string(line)) << std::endl;
 
