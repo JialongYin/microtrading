@@ -14,7 +14,7 @@ void File::diff(File &file, const std::string &fileOutput) {
     while (!filept_.eof()) {
         std::getline(filept_, line_);
         std::getline(file.filept_, line);
-        std::cout << a << " " << typeid(line).name() << std::endl;
+        std::cout << line << " " << typeid(line).name() << std::endl;
         out << compare_(line_, line) << std::endl;
     }
     this->setTobegin();
