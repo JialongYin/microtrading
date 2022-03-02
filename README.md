@@ -13,7 +13,7 @@ $ make
 
 After compilation, run the program following the format as below. The program should take three parameters that represent the names of the two input files and the output file.
 ```
-$ ./main InputA1.txt InputA2.txt OutputA.txt
-$ ./main InputB1.csv InputB2.csv OutputB.csv
+$ ./main data/InputA1.txt data/InputA2.txt data/OutputA.txt
+$ ./main data/InputB1.csv data/InputB2.csv data/OutputB.csv
 ```
 Check the output in related files.
