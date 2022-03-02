@@ -5,6 +5,7 @@ File::File(std::string filename): filept_(filename), compare_(Diff()) {
     getline(filept_, type_);
     int pos = type_.find('_');
     compare_ = Diff(type_.substr(0, pos));
+    std::cout << type_ << std::endl;
 }
 
 void File::diff(File &file, const std::string &fileOutput) {
