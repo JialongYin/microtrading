@@ -1,6 +1,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <typeinfo>
 #include "Diff.h"
 
 class File {

@@ -24,6 +24,7 @@ std::string Diff::operator()(std::string a, std::string b) {
     std::cout << type_ << std::endl;
     switch (this->hashit(type_)) {
         case Int:
+            std::cout << a << " " << std::typeid(a).name() << std::endl;
             return compare(std::stoi(a), std::stoi(b));
             break;
         case Float:
